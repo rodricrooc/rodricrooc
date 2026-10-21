@@ -11,24 +11,13 @@
   <img src="./about.svg" width="100%" alt="QUIEN SOY: Soy @rodricrooc, ingeniero civil informático. Me gusta construir productos donde la lógica, el diseño y una buena idea se encuentran. LO QUE HAGO: Desarrollo experiencias web de principio a fin: interfaces que se sienten bien, código con intención y soluciones que salen del prototipo. MI VISION: Crear cosas que den ganas de usar. Seguir aprendiendo, cuidar los detalles y transformar cada idea en una experiencia con identidad. FUERA DEL EDITOR: El cine también es parte de lo que construyo. Así nace Frame: de las ganas de descubrir historias y compartir una buena película." />
 </picture>
 
-<table align="center">
-<tr>
-<td align="center" width="180"><a href="mailto:rodri.crooc@gmail.com"><img src="./social-email.svg" width="64" alt="Enviar un correo a rodri.crooc@gmail.com" /><br /><samp>GMAIL</samp></a></td>
-<td align="center" width="180"><a href="https://frame.sotos.workers.dev/"><img src="./social-frame.svg" width="64" alt="Visitar Frame, mi página publicada de cine" /><br /><samp>FRAME / CINE</samp></a></td>
-<td align="center" width="180"><a href="https://github.com/rodricrooc"><img src="./social-github.svg" width="64" alt="Mi perfil de GitHub" /><br /><samp>GITHUB</samp></a></td>
-</tr>
-</table>
-<p align="center"><samp><a href="mailto:rodri.crooc@gmail.com">rodri.crooc@gmail.com</a> · <a href="https://frame.sotos.workers.dev/">Visitar Frame</a></samp></p>
-
-<picture>
-  <source media="(max-width: 600px)" srcset="./achievements-mobile.svg" />
-  <img src="./achievements.svg" width="100%" alt="Logros · Mis insignias oficiales de GitHub" />
-</picture>
-
-<p align="center"><a href="https://github.com/rodricrooc?achievement=pull-shark&amp;tab=achievements"><img src="https://github.githubassets.com/assets/pull-shark-bronze-a37accb528d1.png" width="116" alt="Logro oficial Pull Shark, nivel x2" /></a> <a href="https://github.com/rodricrooc?achievement=yolo&amp;tab=achievements"><img src="https://github.githubassets.com/assets/yolo-default-be0bbff04951.png" width="116" alt="Logro oficial YOLO" /></a></p>
-<p align="center"><samp><b>Pull Shark ×2</b> · <b>YOLO</b></samp></p>
-<p align="center"><samp>Pequeños hitos. Proyectos reales. Un paso más en cada commit.</samp></p>
-<p align="center"><a href="https://github.com/rodricrooc?tab=achievements">Ver mis logros en GitHub</a></p>
+<p align="center">
+  <img src="./social-left.svg" width="14%" alt="" />
+  <a href="mailto:rodri.crooc@gmail.com"><img src="./social-email.svg" width="22%" alt="Gmail · Escribirme a rodri.crooc@gmail.com" /></a>
+  <a href="https://frame.sotos.workers.dev/"><img src="./social-frame.svg" width="22%" alt="Frame · Visitar mi página publicada de cine" /></a>
+  <a href="https://github.com/rodricrooc"><img src="./social-github.svg" width="22%" alt="GitHub · Ver mis proyectos" /></a>
+  <img src="./social-right.svg" width="14%" alt="" />
+</p>
 
 
 <picture>
