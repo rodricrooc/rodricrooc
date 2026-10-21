@@ -1,0 +1,49 @@
+name: Actualizar perfil
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 6 * * *"
+  push:
+    paths:
+      - ".github/workflows/profile.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-artwork
+  cancel-in-progress: false
+
+jobs:
+  artwork:
+    name: Generar calendario 3D y serpiente
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v5
+
+      - name: Generar serpiente de contribuciones
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg?color_snake=%2365964c&color_dots=%23ebedf0,%23c5d78b,%2393b568,%2365964c,%23355e3b
+            dist/github-snake-dark.svg?palette=github-dark&color_snake=%23c5d78b&color_dots=%23252725,%23355e3b,%23477e43,%2393b568,%23c5d78b
+
+      - name: Generar calendario 3D
+        uses: yoshi389111/github-profile-3d-contrib@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+
+      - name: Publicar las imágenes actualizadas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- dist/ profile-3d-contrib/
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualizar gráficos de contribuciones"
+            git push
+          fi
