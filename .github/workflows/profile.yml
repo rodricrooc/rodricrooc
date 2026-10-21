@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - ".github/workflows/profile.yml"
+      - "build-profile.mjs"
 
 permissions:
   contents: write
@@ -23,6 +24,9 @@ jobs:
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v5
+
+      - name: Generar diseño, textos y enlaces del perfil
+        run: node build-profile.mjs .
 
       - name: Generar serpiente de contribuciones
         uses: Platane/snk/svg-only@v3
@@ -42,8 +46,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- dist/ profile-3d-contrib/
+          git add -- README.md ./*.svg dist/ profile-3d-contrib/
           if ! git diff --cached --quiet; then
             git commit -m "Actualizar gráficos de contribuciones"
             git push
           fi
+
