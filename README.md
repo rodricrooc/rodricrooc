@@ -1,20 +1,35 @@
 <!-- @rodricrooc · Diseño original de píxeles verdes. Las estadísticas se generan a partir de contribuciones reales. -->
 <picture>
   <source media="(max-width: 600px)" srcset="./banner-mobile.svg" />
-  <img src="./banner.svg" width="100%" alt="rodricrooc · Ingeniero Civil Informático. Ideas, código y soluciones." />
+  <img src="./banner.svg" width="100%" alt="rodricrooc · Ingeniero Civil Informático. Código, diseño y cine." />
 </picture>
+
+<p align="center"><samp><b>El código es el medio. Crear algo que importe es la idea.</b></samp></p>
 
 <picture>
   <source media="(max-width: 600px)" srcset="./about-mobile.svg" />
-  <img src="./about.svg" width="100%" alt="Quién soy: ingeniero civil informático. Qué construyo: aplicaciones web y experiencias digitales. Mi visión: tecnología que aporte valor a las personas. Más allá del código: aprender, construir, probar y mejorar." />
+  <img src="./about.svg" width="100%" alt="QUIEN SOY: Soy @rodricrooc, ingeniero civil informático. Me gusta construir productos donde la lógica, el diseño y una buena idea se encuentran. LO QUE HAGO: Desarrollo experiencias web de principio a fin: interfaces que se sienten bien, código con intención y soluciones que salen del prototipo. MI VISION: Crear cosas que den ganas de usar. Seguir aprendiendo, cuidar los detalles y transformar cada idea en una experiencia con identidad. FUERA DEL EDITOR: El cine también es parte de lo que construyo. Así nace Frame: de las ganas de descubrir historias y compartir una buena película." />
 </picture>
 
-<p align="center">
-<a href="https://github.com/rodricrooc"><img src="https://img.shields.io/badge/GITHUB-252725?style=for-the-badge&amp;logo=github&amp;logoColor=c5d78b" alt="GITHUB" /></a>
-<a href="https://github.com/rodricrooc?tab=repositories"><img src="https://img.shields.io/badge/REPOSITORIOS-252725?style=for-the-badge&amp;logo=github&amp;logoColor=c5d78b" alt="REPOSITORIOS" /></a>
-<a href="https://github.com/rodricrooc?tab=stars"><img src="https://img.shields.io/badge/INSPIRACION-252725?style=for-the-badge&amp;logo=github&amp;logoColor=c5d78b" alt="INSPIRACION" /></a>
-<a href="https://github.com/rodricrooc/rodricrooc/issues/new"><img src="https://img.shields.io/badge/CONVERSEMOS-252725?style=for-the-badge&amp;logo=github&amp;logoColor=c5d78b" alt="CONVERSEMOS" /></a>
-</p>
+<table align="center">
+<tr>
+<td align="center" width="180"><a href="mailto:rodri.crooc@gmail.com"><img src="./social-email.svg" width="64" alt="Enviar un correo a rodri.crooc@gmail.com" /><br /><samp>GMAIL</samp></a></td>
+<td align="center" width="180"><a href="https://frame.sotos.workers.dev/"><img src="./social-frame.svg" width="64" alt="Visitar Frame, mi página publicada de cine" /><br /><samp>FRAME / CINE</samp></a></td>
+<td align="center" width="180"><a href="https://github.com/rodricrooc"><img src="./social-github.svg" width="64" alt="Mi perfil de GitHub" /><br /><samp>GITHUB</samp></a></td>
+</tr>
+</table>
+<p align="center"><samp><a href="mailto:rodri.crooc@gmail.com">rodri.crooc@gmail.com</a> · <a href="https://frame.sotos.workers.dev/">Visitar Frame</a></samp></p>
+
+<picture>
+  <source media="(max-width: 600px)" srcset="./achievements-mobile.svg" />
+  <img src="./achievements.svg" width="100%" alt="Logros · Mis insignias oficiales de GitHub" />
+</picture>
+
+<p align="center"><a href="https://github.com/rodricrooc?achievement=pull-shark&amp;tab=achievements"><img src="https://github.githubassets.com/assets/pull-shark-bronze-a37accb528d1.png" width="116" alt="Logro oficial Pull Shark, nivel x2" /></a> <a href="https://github.com/rodricrooc?achievement=yolo&amp;tab=achievements"><img src="https://github.githubassets.com/assets/yolo-default-be0bbff04951.png" width="116" alt="Logro oficial YOLO" /></a></p>
+<p align="center"><samp><b>Pull Shark ×2</b> · <b>YOLO</b></samp></p>
+<p align="center"><samp>Pequeños hitos. Proyectos reales. Un paso más en cada commit.</samp></p>
+<p align="center"><a href="https://github.com/rodricrooc?tab=achievements">Ver mis logros en GitHub</a></p>
+
 
 <picture>
   <source media="(max-width: 600px)" srcset="./activity-mobile.svg" />
@@ -42,12 +57,28 @@
   <img src="./projects.svg" width="100%" alt="Proyectos · Lo que construyo" />
 </picture>
 
-### [Este perfil, por dentro](https://github.com/rodricrooc/rodricrooc)
+<a href="https://frame.sotos.workers.dev/">
+<picture>
+  <source media="(max-width: 600px)" srcset="./frame-project-mobile.svg" />
+  <img src="./frame-project.svg" width="100%" alt="Frame · Mi proyecto publicado de cine social. Visitar la web." />
+</picture>
+</a>
 
-<samp>Identidad visual retro, ilustraciones originales en SVG, variantes para celular y gráficos de contribuciones que se actualizan automáticamente.</samp>
+### [Frame — Tu cine. Tus historias. Tu comunidad.](https://frame.sotos.workers.dev/)
 
-[Explorar el código](https://github.com/rodricrooc/rodricrooc) · [Ver todos mis repositorios públicos](https://github.com/rodricrooc?tab=repositories)
+<samp>Mi proyecto de cine social: un lugar para descubrir películas, organizar tu biblioteca y compartir lo que te deja cada historia. Del diseño de la interfaz al código que le da vida.</samp>
 
+<p><samp><b>React · TypeScript · Next.js · Cloudflare</b></samp></p>
+<p><a href="https://frame.sotos.workers.dev/"><img src="https://img.shields.io/badge/VISITAR_FRAME-252725?style=for-the-badge&amp;logo=themoviedatabase&amp;logoColor=c5d78b" alt="VISITAR FRAME" /></a></p>
+
+<details>
+<summary>También construí la identidad visual de este perfil</summary>
+
+Ilustraciones originales en SVG, tipografía de píxeles, versiones para celular y gráficos de contribuciones que se actualizan cada día.
+
+[Ver el código del perfil](https://github.com/rodricrooc/rodricrooc)
+
+</details>
 <picture>
   <source media="(max-width: 600px)" srcset="./library-mobile.svg" />
   <img src="./library.svg" width="100%" alt="Biblioteca · Lecturas y recursos para seguir aprendiendo" />
@@ -84,8 +115,8 @@
   <img src="./connect-art.svg" width="100%" alt="Ideas que se convierten en proyectos. Aprender, crear y compartir." />
 </picture>
 
-<p align="center"><samp>¿Una idea, una pregunta o algo que construir?</samp></p>
-<p align="center"><a href="https://github.com/rodricrooc/rodricrooc/issues/new"><img src="https://img.shields.io/badge/ABRIR_CONVERSACION-252725?style=for-the-badge&amp;logo=github&amp;logoColor=c5d78b" alt="ABRIR CONVERSACION" /></a></p>
+<p align="center"><samp>¿La próxima buena idea? Puede empezar con un correo.</samp></p>
+<p align="center"><a href="mailto:rodri.crooc@gmail.com"><img src="https://img.shields.io/badge/ESCRIBEME-252725?style=for-the-badge&amp;logo=gmail&amp;logoColor=c5d78b" alt="ESCRIBEME" /></a> <a href="https://frame.sotos.workers.dev/"><img src="https://img.shields.io/badge/VISITA_FRAME-252725?style=for-the-badge&amp;logo=themoviedatabase&amp;logoColor=c5d78b" alt="VISITA FRAME" /></a></p>
 
 <picture>
   <source media="(max-width: 600px)" srcset="./footer-mobile.svg" />
