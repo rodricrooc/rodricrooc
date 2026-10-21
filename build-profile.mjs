@@ -56,19 +56,36 @@ function mosaic(x,y,cols,rows,cell,density=.62){
  }
  return v+'</g>';
 }
-let hero=start(1200,360,'rodricrooc · Ingeniero Civil Informático','Banner original de estética retro con letras de píxeles y mosaico verde.');
-hero+=display('RODRICROOC',42,37,9);
-hero+='<text x="1158" y="63" fill="#a6b698" text-anchor="end" font-family="monospace" font-size="17" letter-spacing="2">ENGINEERING / WEB / CINEMA</text>';
-hero+=mosaic(0,136,50,6,24,.68);
-hero+='<rect x="824" y="122" width="278" height="174" fill="#252725"/><g fill="none" stroke="#d6d7ca" stroke-width="9" shape-rendering="crispEdges"><path d="M847 144h232v120H847zM915 289h97M963 265v24"/><path d="m880 185 18 17-18 17m76-34-18 34" stroke="#b5d786"/></g><rect x="976" y="214" width="28" height="7" fill="#b5d786"><animate attributeName="opacity" values="1;1;0;0;1" dur="2s" repeatCount="indefinite"/></rect>';
-hero+=pixel('INGENIERO CIVIL INFORMATICO',42,312,3);
-hero+='<text x="1158" y="334" text-anchor="end" fill="#a6b698" font-size="16" font-family="monospace">DE LA IDEA A LA PANTALLA</text></svg>';
-fs.writeFileSync(path.join(out,'banner.svg'),hero);
-let mobileHero=start(600,360,'rodricrooc · Ingeniero Civil Informático','Banner retro adaptado para celular.');
-mobileHero+=display('RODRICROOC',30,30,8);
-mobileHero+=mosaic(0,120,25,6,24,.65);
-mobileHero+='<rect x="30" y="272" width="540" height="65" fill="#252725"/><text x="30" y="302" font-family="monospace" font-size="26" fill="#ecebe3">INGENIERO CIVIL INFORMÁTICO</text><text x="30" y="333" font-family="monospace" font-size="20" fill="#c5d78b">CÓDIGO / DISEÑO / CINE</text></svg>';
-fs.writeFileSync(path.join(out,'banner-mobile.svg'),mobileHero);
+function matrixBanner(mobile){
+ const w=mobile?600:1200,h=mobile?380:360;
+ let mSeed=mobile?701:1297;
+ const next=()=>{mSeed=(mSeed*1664525+1013904223)>>>0;return mSeed/4294967296;};
+ const alphabet=[...'アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+ let svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'" role="img" aria-labelledby="title desc"><title id="title">rodricrooc · Matrix</title><desc id="desc">Lluvia animada de caracteres verdes detrás de rodricrooc, Ingeniero Civil Informático.</desc>';
+ svg+='<defs><linearGradient id="shade"><stop offset="0" stop-color="#050d08" stop-opacity=".82"/><stop offset=".66" stop-color="#050d08" stop-opacity=".6"/><stop offset="1" stop-color="#050d08" stop-opacity=".05"/></linearGradient><filter id="glow" x="-20%" y="-30%" width="140%" height="160%"><feGaussianBlur stdDeviation="2"/></filter></defs><rect width="'+w+'" height="'+h+'" fill="#050d08"/>';
+ const columns=mobile?23:47,gap=w/columns;
+ svg+='<g class="rain" font-family="monospace" font-size="'+(mobile?16:17)+'" text-anchor="middle" aria-hidden="true">';
+ for(let c=0;c<columns;c++){
+  const count=10+Math.floor(next()*13),line=mobile?21:22,tail=count*line,duration=4.2+next()*5.5,phase=next()*duration;
+  svg+='<g transform="translate(0 '+(-tail)+')"><animateTransform attributeName="transform" type="translate" values="0 '+(-tail)+';0 '+(h+line)+'" dur="'+duration.toFixed(2)+'s" begin="-'+phase.toFixed(2)+'s" repeatCount="indefinite"/>';
+  for(let k=0;k<count;k++){
+   const ratio=(k+1)/count,fill=k===count-1?'#dcffe4':(k>count-4?'#7cff9e':'#21bf60');
+   svg+='<text x="'+((c+.5)*gap).toFixed(1)+'" y="'+(k*line)+'" fill="'+fill+'" opacity="'+(.12+ratio*.76).toFixed(2)+'">'+alphabet[Math.floor(next()*alphabet.length)]+'</text>';
+  }
+  svg+='</g>';
+ }
+ svg+='</g><rect width="'+w+'" height="'+h+'" fill="url(#shade)"/>';
+ const x=mobile?30:48,y=mobile?110:108,size=mobile?8:13;
+ svg+='<text x="'+x+'" y="'+(mobile?46:41)+'" fill="#7bb58a" font-size="'+(mobile?16:14)+'" letter-spacing="3" font-family="monospace">CODE / DESIGN / CINEMA</text>';
+ const title=display('RODRICROOC',x,y,size,'#deffe7');
+ svg+='<g opacity=".36" filter="url(#glow)">'+title+'</g>'+title;
+ svg+='<text x="'+x+'" y="'+(mobile?246:270)+'" fill="#d1e5d6" font-size="24" font-family="monospace">INGENIERO CIVIL INFORMÁTICO</text>';
+ svg+='<text x="'+x+'" y="'+(mobile?297:316)+'" fill="#89cfa0" font-size="'+(mobile?19:18)+'" letter-spacing="1" font-family="monospace">DE LA IDEA A LA PANTALLA<tspan>_<animate attributeName="opacity" values="1;1;0;0;1" dur="1.8s" repeatCount="indefinite"/></tspan></text>';
+ svg+='<rect y="'+(h-3)+'" width="'+w+'" height="3" fill="#477e43"/></svg>';
+ return svg;
+}
+fs.writeFileSync(path.join(out,'banner.svg'),matrixBanner(false));
+fs.writeFileSync(path.join(out,'banner-mobile.svg'),matrixBanner(true));
 
 const sections=[
  ['QUIEN SOY','Soy @rodricrooc, ingeniero civil informático. Me gusta construir productos donde la lógica, el diseño y una buena idea se encuentran.'],
@@ -222,7 +239,6 @@ fs.writeFileSync(path.join(out,'README.md'),complete);
 console.log('Perfil completo generado en '+path.resolve(out));
 
 
-header('LOGROS','achievements');
 
 for(const [name,draw]of [
  ['email','<rect x="18" y="29" width="60" height="40" rx="2"/><path d="m20 32 28 23 28-23M19 67l20-19m38 19L57 48"/>'],
@@ -254,24 +270,7 @@ let polished=fs.readFileSync(path.join(out,'README.md'),'utf8');
 const aboutAlt=sections.map(([t,b])=>t+': '+b).join(' ');
 polished=polished.replace(/alt="Quién soy:[^"]*"/,'alt="'+aboutAlt+'"');
 polished=polished.replace(picture('banner','rodricrooc · Ingeniero Civil Informático. Ideas, código y soluciones.'),picture('banner','rodricrooc · Ingeniero Civil Informático. Código, diseño y cine.')+'\n\n<p align="center"><samp><b>El código es el medio. Crear algo que importe es la idea.</b></samp></p>');
-const socials=[
-'<table align="center">',
-'<tr>',
-'<td align="center" width="180"><a href="mailto:rodri.crooc@gmail.com"><img src="./social-email.svg" width="64" alt="Enviar un correo a rodri.crooc@gmail.com" /><br /><samp>GMAIL</samp></a></td>',
-'<td align="center" width="180"><a href="https://frame.sotos.workers.dev/"><img src="./social-frame.svg" width="64" alt="Visitar Frame, mi página publicada de cine" /><br /><samp>FRAME / CINE</samp></a></td>',
-'<td align="center" width="180"><a href="https://github.com/rodricrooc"><img src="./social-github.svg" width="64" alt="Mi perfil de GitHub" /><br /><samp>GITHUB</samp></a></td>',
-'</tr>',
-'</table>',
-'<p align="center"><samp><a href="mailto:rodri.crooc@gmail.com">rodri.crooc@gmail.com</a> · <a href="https://frame.sotos.workers.dev/">Visitar Frame</a></samp></p>',
-'',
-picture('achievements','Logros · Mis insignias oficiales de GitHub'),
-'',
-'<p align="center"><a href="https://github.com/rodricrooc?achievement=pull-shark&amp;tab=achievements"><img src="https://github.githubassets.com/assets/pull-shark-bronze-a37accb528d1.png" width="116" alt="Logro oficial Pull Shark, nivel x2" /></a> <a href="https://github.com/rodricrooc?achievement=yolo&amp;tab=achievements"><img src="https://github.githubassets.com/assets/yolo-default-be0bbff04951.png" width="116" alt="Logro oficial YOLO" /></a></p>',
-'<p align="center"><samp><b>Pull Shark ×2</b> · <b>YOLO</b></samp></p>',
-'<p align="center"><samp>Pequeños hitos. Proyectos reales. Un paso más en cada commit.</samp></p>',
-'<p align="center"><a href="https://github.com/rodricrooc?tab=achievements">Ver mis logros en GitHub</a></p>',
-''
-].join('\n');
+const socials="<p align=\"center\">\n  <img src=\"./social-left.svg\" width=\"14%\" alt=\"\" />\n  <a href=\"mailto:rodri.crooc@gmail.com\"><img src=\"./social-email.svg\" width=\"22%\" alt=\"Gmail · Escribirme a rodri.crooc@gmail.com\" /></a>\n  <a href=\"https://frame.sotos.workers.dev/\"><img src=\"./social-frame.svg\" width=\"22%\" alt=\"Frame · Visitar mi página publicada de cine\" /></a>\n  <a href=\"https://github.com/rodricrooc\"><img src=\"./social-github.svg\" width=\"22%\" alt=\"GitHub · Ver mis proyectos\" /></a>\n  <img src=\"./social-right.svg\" width=\"14%\" alt=\"\" />\n</p>\n";
 const socialBlock=/<p align="center">\n<a href="https:\/\/github.com\/rodricrooc">[\s\S]*?<\/p>/;
 if(!socialBlock.test(polished))throw new Error('Could not find old social block');
 polished=polished.replace(socialBlock,socials);
@@ -303,4 +302,25 @@ polished=polished.replace('¿Una idea, una pregunta o algo que construir?','¿La
 polished=polished.replace(/<p align="center"><a href="https:\/\/github.com\/rodricrooc\/rodricrooc\/issues\/new"><img[^>]+alt="ABRIR CONVERSACION" \/><\/a><\/p>/,'<p align="center">'+badge('ESCRIBEME','mailto:rodri.crooc@gmail.com','gmail')+' '+badge('VISITA_FRAME','https://frame.sotos.workers.dev/','themoviedatabase')+'</p>');
 fs.writeFileSync(path.join(out,'README.md'),polished);
 console.log('Redes, Frame, logros y textos actualizados.');
+
+
+const githubIconBody="<g fill=\"#181616\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z\"/><path d=\"M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0\"/></g>";
+function socialArt(label,caption,art){
+ return start(200,190,label,caption)+
+ '<text x="100" y="37" text-anchor="middle" font-family="monospace" font-size="27" fill="#ecebe3">'+label+'</text>'+
+ art+
+ '<text x="100" y="166" text-anchor="middle" font-family="monospace" font-size="13" letter-spacing="1.3" fill="#a8c18b">'+caption+'</text></svg>';
+}
+const gmailArt='<g fill="none" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><path d="M69 129V82l31 23 31-23v47" stroke="#ea4335"/><path d="M69 129V90" stroke="#4285f4"/><path d="M131 129V90" stroke="#34a853"/><path d="M69 82v9l10 8" stroke="#fbbc05"/><path d="M131 82v9l-10 8" stroke="#fbbc05"/></g>';
+const frameArt='<g stroke="#c5d78b" stroke-width="3" fill="none"><rect x="66" y="71" width="68" height="62" rx="5"/><path d="M79 71v62m42-62v62M66 86h13m-13 16h13m-13 16h13m42-32h13m-13 16h13m-13 16h13"/></g><path d="m92 88 21 14-21 14z" fill="#c5d78b"/>';
+fs.writeFileSync(path.join(out,'social-email.svg'),socialArt('Gmail','ESCRIBEME',gmailArt));
+fs.writeFileSync(path.join(out,'social-frame.svg'),socialArt('Frame','CINE SOCIAL',frameArt));
+fs.writeFileSync(path.join(out,'social-github.svg'),socialArt('GitHub','MIS PROYECTOS','<g transform="translate(68 70) scale(.5)" fill="#ecebe3">'+githubIconBody.replace(/fill="[^"]*"/g,'fill="#ecebe3"')+'</g>'));
+let left=start(120,190,'','');
+left+='<g shape-rendering="crispEdges"><path d="M29 126h63v9H29zm9 9h45v36H38z" fill="#d1d0c6"/><path d="M56 72h9v54h-9zM38 72h18v9H38zm-9-9h18v9H29zm36-18h18v9H65zm9-9h18v9H74zm-9 18h9v18h-9z" fill="#93b568"/><path d="M47 45h9v27h-9zm-9-9h18v9H38z" fill="#c5d78b"/></g></svg>';
+fs.writeFileSync(path.join(out,'social-left.svg'),left);
+let right=start(120,190,'','');
+right+='<g stroke="#c4d3b9" stroke-width="3" fill="none"><rect x="14" y="67" width="92" height="64"/><path d="M60 131v17m-25 0h50"/><path d="m33 88 11 11-11 11m35-22-11 22" stroke="#93b568"/></g><rect x="76" y="107" width="13" height="3" fill="#c5d78b"/><g fill="#477e43"><rect x="23" y="31" width="8" height="8"/><rect x="88" y="42" width="6" height="6"/><rect x="77" y="24" width="8" height="8"/></g></svg>';
+fs.writeFileSync(path.join(out,'social-right.svg'),right);
+console.log('Banner Matrix y redes actualizados. Logros conservados solo en la barra lateral.');
 
