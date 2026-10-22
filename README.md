@@ -4,20 +4,33 @@
   <img src="./banner.svg" width="100%" alt="rodricrooc · Ingeniero Civil Informático. Código, diseño y cine." />
 </picture>
 
-<p align="center"><samp><b>El código es el medio. Crear algo que importe es la idea.</b></samp></p>
+<p align="center"><samp><b>Follow the white rabbit.</b></samp></p>
 
 <picture>
   <source media="(max-width: 600px)" srcset="./about-mobile.svg" />
   <img src="./about.svg" width="100%" alt="QUIEN SOY: Soy @rodricrooc, ingeniero civil informático. Me gusta construir productos donde la lógica, el diseño y una buena idea se encuentran. LO QUE HAGO: Desarrollo experiencias web de principio a fin: interfaces que se sienten bien, código con intención y soluciones que salen del prototipo. MI VISION: Crear cosas que den ganas de usar. Seguir aprendiendo, cuidar los detalles y transformar cada idea en una experiencia con identidad. FUERA DEL EDITOR: El cine también es parte de lo que construyo. Así nace Frame: de las ganas de descubrir historias y compartir una buena película." />
 </picture>
 
-<p align="center">
-  <img src="./social-left.svg" width="14%" alt="" />
-  <a href="mailto:rodri.crooc@gmail.com"><img src="./social-email.svg" width="22%" alt="Gmail · Escribirme a rodri.crooc@gmail.com" /></a>
-  <a href="https://frame.sotos.workers.dev/"><img src="./social-frame.svg" width="22%" alt="Frame · Visitar mi página publicada de cine" /></a>
-  <a href="https://github.com/rodricrooc"><img src="./social-github.svg" width="22%" alt="GitHub · Ver mis proyectos" /></a>
-  <img src="./social-right.svg" width="14%" alt="" />
-</p>
+<a href="mailto:rodri.crooc@gmail.com">
+<picture>
+  <source media="(max-width: 600px)" srcset="./social-email-mobile.svg" />
+  <img src="./social-email.svg" width="100%" alt="Gmail · Escribirme a rodri.crooc@gmail.com" />
+</picture>
+</a>
+
+<a href="https://frame.sotos.workers.dev/">
+<picture>
+  <source media="(max-width: 600px)" srcset="./social-frame-mobile.svg" />
+  <img src="./social-frame.svg" width="100%" alt="Frame · Visitar mi página publicada de cine" />
+</picture>
+</a>
+
+<a href="https://github.com/rodricrooc">
+<picture>
+  <source media="(max-width: 600px)" srcset="./social-github-mobile.svg" />
+  <img src="./social-github.svg" width="100%" alt="GitHub · Ver mis proyectos" />
+</picture>
+</a>
 
 
 <picture>
@@ -99,13 +112,15 @@ Ilustraciones originales en SVG, tipografía de píxeles, versiones para celular
   <img src="./connect.svg" width="100%" alt="Conectemos" />
 </picture>
 
+<a href="mailto:rodri.crooc@gmail.com">
 <picture>
-  <source media="(max-width: 600px)" srcset="./connect-art-mobile.svg" />
-  <img src="./connect-art.svg" width="100%" alt="Ideas que se convierten en proyectos. Aprender, crear y compartir." />
+  <source media="(max-width: 600px)" srcset="./social-email-mobile.svg" />
+  <img src="./social-email.svg" width="100%" alt="Gmail · Hablemos de tu próxima idea. rodri.crooc@gmail.com" />
 </picture>
+</a>
 
 <p align="center"><samp>¿La próxima buena idea? Puede empezar con un correo.</samp></p>
-<p align="center"><a href="mailto:rodri.crooc@gmail.com"><img src="https://img.shields.io/badge/ESCRIBEME-252725?style=for-the-badge&amp;logo=gmail&amp;logoColor=c5d78b" alt="ESCRIBEME" /></a> <a href="https://frame.sotos.workers.dev/"><img src="https://img.shields.io/badge/VISITA_FRAME-252725?style=for-the-badge&amp;logo=themoviedatabase&amp;logoColor=c5d78b" alt="VISITA FRAME" /></a></p>
+
 
 <picture>
   <source media="(max-width: 600px)" srcset="./footer-mobile.svg" />
