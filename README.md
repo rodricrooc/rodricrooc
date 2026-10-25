@@ -1,17 +1,17 @@
-<!-- Matrix Signal · Generado por build-profile.mjs. Editar esta fuente. -->
+<!-- Green Editorial � Generado por build-profile.mjs. Editar esta fuente. -->
 <picture>
   <source media="(max-width: 767px)" srcset="./banner-mobile.svg" />
-  <img src="./banner.svg" width="100%" alt="RODRICROOC · Ingeniero Civil Informático. Follow the white rabbit." />
+  <img src="./banner.svg" width="100%" alt="RODRICROOC � Ingeniero Civil Inform�tico. Follow the white rabbit." />
 </picture>
 
 <picture>
   <source media="(max-width: 767px)" srcset="./about-heading-mobile.svg" />
-  <img src="./about-heading.svg" width="100%" alt="01 / Sobre mí" />
+  <img src="./about-heading.svg" width="100%" alt="01 / Sobre m�" />
 </picture>
 
-Soy **@rodricrooc**, ingeniero civil informático. Desarrollo experiencias web donde el código, el diseño y la experiencia de uso trabajan juntos.
+Soy **@rodricrooc**, ingeniero civil inform�tico. Desarrollo experiencias web donde el c�digo, el dise�o y la experiencia de uso trabajan juntos.
 
-Me gusta convertir ideas en productos con identidad. **Frame** une dos de mis intereses: tecnología y cine.
+Me gusta convertir ideas en productos con identidad. **Frame** une dos de mis intereses: tecnolog�a y cine.
 
 <picture>
   <source media="(max-width: 767px)" srcset="./projects-mobile.svg" />
@@ -21,13 +21,13 @@ Me gusta convertir ideas en productos con identidad. **Frame** une dos de mis in
 <a href="https://frame.sotos.workers.dev/">
 <picture>
   <source media="(max-width: 767px)" srcset="./frame-project-mobile.svg" />
-  <img src="./frame-project.svg" width="100%" alt="Frame · Tu cine. Tus historias. Tu comunidad. Visitar mi proyecto publicado de cine social." />
+  <img src="./frame-project.svg" width="100%" alt="Frame � Tu cine. Tus historias. Explorar mi proyecto de cine social." />
 </picture>
 </a>
 
 <picture>
   <source media="(max-width: 767px)" srcset="./stack-heading-mobile.svg" />
-  <img src="./stack-heading.svg" width="100%" alt="03 / Tecnologías" />
+  <img src="./stack-heading.svg" width="100%" alt="03 / Tecnolog�as" />
 </picture>
 
 <picture>
@@ -43,21 +43,21 @@ Me gusta convertir ideas en productos con identidad. **Frame** une dos de mis in
 <a href="mailto:rodri.crooc@gmail.com">
 <picture>
   <source media="(max-width: 767px)" srcset="./social-email-mobile.svg" />
-  <img src="./social-email.svg" width="100%" alt="Gmail · rodri.crooc@gmail.com" />
+  <img src="./social-email.svg" width="100%" alt="Gmail � rodri.crooc@gmail.com" />
 </picture>
 </a>
 
 <a href="https://frame.sotos.workers.dev/">
 <picture>
   <source media="(max-width: 767px)" srcset="./social-frame-mobile.svg" />
-  <img src="./social-frame.svg" width="100%" alt="Frame · frame.sotos.workers.dev" />
+  <img src="./social-frame.svg" width="100%" alt="Frame � frame.sotos.workers.dev" />
 </picture>
 </a>
 
 <a href="https://github.com/rodricrooc?tab=repositories">
 <picture>
   <source media="(max-width: 767px)" srcset="./social-github-mobile.svg" />
-  <img src="./social-github.svg" width="100%" alt="GitHub · github.com/rodricrooc" />
+  <img src="./social-github.svg" width="100%" alt="GitHub � github.com/rodricrooc" />
 </picture>
 </a>
 
@@ -66,12 +66,12 @@ Me gusta convertir ideas en productos con identidad. **Frame** une dos de mis in
   <img src="./activity.svg" width="100%" alt="05 / Actividad" />
 </picture>
 
-<p><samp>Contribuciones reales · actualización diaria</samp></p>
+<p><samp>Contribuciones reales � actualizaci�n diaria</samp></p>
 
 <img src="./profile-3d-contrib/profile-night-green.svg" width="100%" alt="Calendario 3D de mis contribuciones reales de GitHub" />
 
 <details>
-<summary>Abrir el calendario en tamaño completo</summary>
+<summary>Abrir el calendario en tama�o completo</summary>
 
 [Ver calendario 3D](./profile-3d-contrib/profile-night-green.svg)
 
@@ -92,21 +92,21 @@ Me gusta convertir ideas en productos con identidad. **Frame** une dos de mis in
 <a href="https://git-scm.com/book/es/v2">
 <picture>
   <source media="(max-width: 767px)" srcset="./book-git-mobile.svg" />
-  <img src="./book-git.svg" width="100%" alt="Pro Git · Control de versiones, en español" />
+  <img src="./book-git.svg" width="100%" alt="Pro Git � Control de versiones, en espa�ol" />
 </picture>
 </a>
 
 <a href="https://www.typescriptlang.org/docs/handbook/intro.html">
 <picture>
   <source media="(max-width: 767px)" srcset="./book-typescript-mobile.svg" />
-  <img src="./book-typescript.svg" width="100%" alt="TypeScript Handbook · Documentación oficial" />
+  <img src="./book-typescript.svg" width="100%" alt="TypeScript Handbook � Documentaci�n oficial" />
 </picture>
 </a>
 
 <a href="https://react.dev/learn">
 <picture>
   <source media="(max-width: 767px)" srcset="./book-react-mobile.svg" />
-  <img src="./book-react.svg" width="100%" alt="Learn React · Documentación oficial" />
+  <img src="./book-react.svg" width="100%" alt="Learn React � Documentaci�n oficial" />
 </picture>
 </a>
 
@@ -116,14 +116,14 @@ Me gusta convertir ideas en productos con identidad. **Frame** une dos de mis in
 </picture>
 
 <details>
-<summary>Créditos y recursos</summary>
+<summary>Cr�ditos y recursos</summary>
 
-Diseño Matrix Signal e ilustración de cine en SVG. Variantes para escritorio y móvil; la cabecera respeta la preferencia de movimiento reducido.
+Dise�o Green Editorial con portadas originales creadas para este perfil. Variantes para escritorio y m�vil; la cabecera respeta la preferencia de movimiento reducido.
 
-Tipografía del nombre: [Oxanium](https://github.com/google/fonts/tree/main/ofl/oxanium), © 2019 The Oxanium Project Authors, [SIL Open Font License 1.1](https://github.com/google/fonts/blob/main/ofl/oxanium/OFL.txt). El nombre se dibuja con vectores para conservar su aspecto en todos los dispositivos.
+Tipograf�a: [Bodoni Moda](https://github.com/google/fonts/tree/main/ofl/bodonimoda), versiones romana e it�lica, bajo [SIL Open Font License 1.1](https://github.com/google/fonts/blob/main/ofl/bodonimoda/OFL.txt). Los t�tulos se dibujan con vectores para conservar su aspecto en todos los dispositivos.
 
-Iconos: [Devicon](https://github.com/devicons/devicon). Calendario: [github-profile-3d-contrib](https://github.com/yoshi389111/github-profile-3d-contrib). Animación de contribuciones: [snk](https://github.com/Platane/snk).
+Iconos: [Devicon](https://github.com/devicons/devicon). Calendario: [github-profile-3d-contrib](https://github.com/yoshi389111/github-profile-3d-contrib). Animaci�n de contribuciones: [snk](https://github.com/Platane/snk).
 
-[Ver el código del perfil](https://github.com/rodricrooc/rodricrooc)
+[Ver el c�digo del perfil](https://github.com/rodricrooc/rodricrooc)
 
 </details>
