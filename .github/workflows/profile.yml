@@ -25,9 +25,6 @@ jobs:
       - name: Descargar repositorio
         uses: actions/checkout@v5
 
-      - name: Generar diseño, textos y enlaces del perfil
-        run: node build-profile.mjs .
-
       - name: Generar serpiente de contribuciones
         uses: Platane/snk/svg-only@v3
         with:
@@ -42,11 +39,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
 
+      - name: Generar diseño, textos y enlaces del perfil
+        run: node build-profile.mjs .
+
       - name: Publicar las imágenes actualizadas
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- README.md ./*.svg dist/ profile-3d-contrib/
+          git add -- README.md THIRD_PARTY_NOTICES.md ./*.svg dist/ profile-3d-contrib/
           if ! git diff --cached --quiet; then
             git commit -m "Actualizar gráficos de contribuciones"
             git push
