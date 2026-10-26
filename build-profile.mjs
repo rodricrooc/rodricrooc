@@ -42,7 +42,7 @@ function banner(mobile){
  const w=mobile?480:1200,h=mobile?286:352,p=mobile?28:44;
  let seed=mobile?492:917;
  const rnd=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};
- const chars=[...'????????????????????0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+ const chars=[...'アイウエオカキクケコサシスセソタチツテト0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
  const cols=mobile?19:45,gap=w/cols,line=22;
  let rain='<g class="rain" aria-hidden="true" text-anchor="middle">';
  for(let c=0;c<cols;c++){
@@ -58,11 +58,11 @@ function banner(mobile){
  art+=lettering(wm,'RODRICROOC',p,mobile?99:169,w-2*p,mobile?72:124,'#f3efe4',false,-16);
  if(mobile){
   art+=txt('Ingeniero Civil',p,145,26,C.ink);
-  art+=txt('Inform�tico',p,178,26,C.ink);
- }else art+=txt('Ingeniero Civil Inform�tico',p,226,29,C.ink,'letter-spacing="1"');
+  art+=txt('Informático',p,178,26,C.ink);
+ }else art+=txt('Ingeniero Civil Informático',p,226,29,C.ink,'letter-spacing="1"');
  art+='<path d="M'+p+' '+(mobile?211:263)+'h40" stroke="#dce5d3" stroke-width="2"/>';
  art+=txt('Follow the white rabbit.',p,mobile?254:309,mobile?24:27,C.ink);
- return svg(w,h,'RODRICROOC � Ingeniero Civil Inform�tico','Follow the white rabbit. Tipograf�a serif Bodoni Moda y lluvia Matrix animada con movimiento reducido.',art,'<clipPath id="clip"><rect x="2" y="2" width="'+(w-4)+'" height="'+(h-4)+'" rx="12"/></clipPath><linearGradient id="shade"><stop stop-color="#080f0c" stop-opacity=".97"/><stop offset=".48" stop-color="#080f0c" stop-opacity=".88"/><stop offset="1" stop-color="#080f0c" stop-opacity=".1"/></linearGradient>');
+ return svg(w,h,'RODRICROOC · Ingeniero Civil Informático','Follow the white rabbit. Tipografía serif Bodoni Moda y lluvia Matrix animada con movimiento reducido.',art,'<clipPath id="clip"><rect x="2" y="2" width="'+(w-4)+'" height="'+(h-4)+'" rx="12"/></clipPath><linearGradient id="shade"><stop stop-color="#080f0c" stop-opacity=".97"/><stop offset=".48" stop-color="#080f0c" stop-opacity=".88"/><stop offset="1" stop-color="#080f0c" stop-opacity=".1"/></linearGradient>');
 }
 pair('banner',banner);
 
@@ -87,7 +87,7 @@ function frameProject(mobile){
   art+='<image xlink:href="'+artUri+'" x="572" y="12" width="652" height="356" preserveAspectRatio="xMidYMid meet"/>';
  }
  art+='</g>';
- return svg(w,h,'Frame � Tu cine. Tus historias.','Explorar Frame. Portadas originales de una costa nocturna, un pasaje de arquitectura verde y un paisaje ocre.',art,'<clipPath id="card"><rect x="2" y="2" width="'+(w-4)+'" height="'+(h-4)+'" rx="11"/></clipPath><linearGradient id="ivory" x2="1" y2="1"><stop stop-color="#f7f1e2"/><stop offset="1" stop-color="#e9e1cf"/></linearGradient><filter id="paper"><feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="2" stitchTiles="stitch" seed="31"/><feColorMatrix type="saturate" values="0"/></filter>');
+ return svg(w,h,'Frame · Tu cine. Tus historias.','Explorar Frame. Portadas originales de una costa nocturna, un pasaje de arquitectura verde y un paisaje ocre.',art,'<clipPath id="card"><rect x="2" y="2" width="'+(w-4)+'" height="'+(h-4)+'" rx="11"/></clipPath><linearGradient id="ivory" x2="1" y2="1"><stop stop-color="#f7f1e2"/><stop offset="1" stop-color="#e9e1cf"/></linearGradient><filter id="paper"><feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="2" stitchTiles="stitch" seed="31"/><feColorMatrix type="saturate" values="0"/></filter>');
 }
 pair('frame-project',frameProject);
 
@@ -114,7 +114,7 @@ function stack(mobile){
    art+=txt(icons[key].label,x+70,y+ch/2+7,key==='typescript'||key==='tailwind'?18:20);
   }
  });
- return svg(w,h,'Tecnolog�as y herramientas','HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind CSS, Node.js, Vite, Cloudflare, Git y GitHub. No se indican niveles de dominio.',art);
+ return svg(w,h,'Tecnologías y herramientas','HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind CSS, Node.js, Vite, Cloudflare, Git y GitHub. No se indican niveles de dominio.',art);
 }
 pair('stack',stack);
 
@@ -137,15 +137,15 @@ function contact(channel,mobile){
  art+=txt(channel.display,mobile?p:350,mobile?104:53,mobile?25:22,C.muted);
  const ax=w-(mobile?40:45),ay=mobile?45:45;
  art+='<path d="M'+ax+' '+(ay+9)+'v-17h-17m17 0-20 20" fill="none" stroke="'+C.green+'" stroke-width="2"/>';
- return svg(w,h,channel.title+' � '+channel.display,'Abrir '+channel.title+': '+channel.display,art);
+ return svg(w,h,channel.title+' · '+channel.display,'Abrir '+channel.title+': '+channel.display,art);
 }
 for(const channel of contacts)pair('social-'+channel.key,mobile=>contact(channel,mobile));
 
-const headings=[['01','SOBRE M�','about-heading'],['02','PROYECTO DESTACADO','projects'],['03','TECNOLOG�AS','stack-heading'],['04','CONECTEMOS','connect'],['05','ACTIVIDAD','activity'],['06','BIBLIOTECA','library']];
+const headings=[['01','SOBRE MÍ','about-heading'],['02','PROYECTO DESTACADO','projects'],['03','TECNOLOGÍAS','stack-heading'],['04','CONECTEMOS','connect'],['05','ACTIVIDAD','activity'],['06','BIBLIOTECA','library']];
 for(const [no,label,file] of headings)pair(file,mobile=>{
  const w=mobile?480:1200,h=mobile?60:66;
  const art=txt(no+' / '+label,0,mobile?34:37,mobile?24:25,C.green)+'<path d="M0 '+(h-7)+'H'+w+'" stroke="'+C.border+'"/>';
- return svg(w,h,no+' / '+label,'Encabezado de secci�n',art);
+ return svg(w,h,no+' / '+label,'Encabezado de sección',art);
 });
 for(const item of [{name:'git',label:'Pro Git',desc:'Control de versiones',icon:'git'},{name:'typescript',label:'TypeScript Handbook',desc:'Tipos y herramientas',icon:'typescript'},{name:'react',label:'Learn React',desc:'Componentes e interfaces',icon:'react'}]){
  pair('book-'+item.name,mobile=>{
@@ -170,34 +170,34 @@ pair('footer',mobile=>{
 
 const heading=(file,alt)=>picture(file,alt);
 const md=[
- '<!-- Green Editorial � Generado por build-profile.mjs. Editar esta fuente. -->',
- picture('banner','RODRICROOC � Ingeniero Civil Inform�tico. Follow the white rabbit.'),
+ '<!-- Green Editorial · Generado por build-profile.mjs. Editar esta fuente. -->',
+ picture('banner','RODRICROOC · Ingeniero Civil Informático. Follow the white rabbit.'),
  '',
- heading('about-heading','01 / Sobre m�'),
+ heading('about-heading','01 / Sobre mí'),
  '',
- 'Soy **@rodricrooc**, ingeniero civil inform�tico. Desarrollo experiencias web donde el c�digo, el dise�o y la experiencia de uso trabajan juntos.',
+ 'Soy **@rodricrooc**, ingeniero civil informático. Desarrollo experiencias web donde el código, el diseño y la experiencia de uso trabajan juntos.',
  '',
- 'Me gusta convertir ideas en productos con identidad. **Frame** une dos de mis intereses: tecnolog�a y cine.',
+ 'Me gusta convertir ideas en productos con identidad. **Frame** une dos de mis intereses: tecnología y cine.',
  '',
  heading('projects','02 / Proyecto destacado'),
  '',
- linked('https://frame.sotos.workers.dev/','frame-project','Frame � Tu cine. Tus historias. Explorar mi proyecto de cine social.'),
+ linked('https://frame.sotos.workers.dev/','frame-project','Frame · Tu cine. Tus historias. Explorar mi proyecto de cine social.'),
  '',
- heading('stack-heading','03 / Tecnolog�as'),
+ heading('stack-heading','03 / Tecnologías'),
  '',
  picture('stack','HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind CSS, Node.js, Vite, Cloudflare, Git y GitHub.'),
  '',
  heading('connect','04 / Conectemos'),
  '',
- ...contacts.flatMap(channel=>[linked(channel.url,'social-'+channel.key,channel.title+' � '+channel.display),'']),
+ ...contacts.flatMap(channel=>[linked(channel.url,'social-'+channel.key,channel.title+' · '+channel.display),'']),
  heading('activity','05 / Actividad'),
  '',
- '<p><samp>Contribuciones reales � actualizaci�n diaria</samp></p>',
+ '<p><samp>Contribuciones reales · actualización diaria</samp></p>',
  '',
  '<img src="./profile-3d-contrib/profile-night-green.svg" width="100%" alt="Calendario 3D de mis contribuciones reales de GitHub" />',
  '',
  '<details>',
- '<summary>Abrir el calendario en tama�o completo</summary>',
+ '<summary>Abrir el calendario en tamaño completo</summary>',
  '',
  '[Ver calendario 3D](./profile-3d-contrib/profile-night-green.svg)',
  '',
@@ -212,30 +212,30 @@ const md=[
  '',
  heading('library','06 / Biblioteca'),
  '',
- linked('https://git-scm.com/book/es/v2','book-git','Pro Git � Control de versiones, en espa�ol'),
+ linked('https://git-scm.com/book/es/v2','book-git','Pro Git · Control de versiones, en español'),
  '',
- linked('https://www.typescriptlang.org/docs/handbook/intro.html','book-typescript','TypeScript Handbook � Documentaci�n oficial'),
+ linked('https://www.typescriptlang.org/docs/handbook/intro.html','book-typescript','TypeScript Handbook · Documentación oficial'),
  '',
- linked('https://react.dev/learn','book-react','Learn React � Documentaci�n oficial'),
+ linked('https://react.dev/learn','book-react','Learn React · Documentación oficial'),
  '',
  picture('footer','Seguir aprendiendo. Seguir construyendo.'),
  '',
  '<details>',
- '<summary>Cr�ditos y recursos</summary>',
+ '<summary>Créditos y recursos</summary>',
  '',
- 'Dise�o Green Editorial con portadas originales creadas para este perfil. Variantes para escritorio y m�vil; la cabecera respeta la preferencia de movimiento reducido.',
+ 'Diseño Green Editorial con portadas originales creadas para este perfil. Variantes para escritorio y móvil; la cabecera respeta la preferencia de movimiento reducido.',
  '',
- 'Tipograf�a: [Bodoni Moda](https://github.com/google/fonts/tree/main/ofl/bodonimoda), versiones romana e it�lica, bajo [SIL Open Font License 1.1](https://github.com/google/fonts/blob/main/ofl/bodonimoda/OFL.txt). Los t�tulos se dibujan con vectores para conservar su aspecto en todos los dispositivos.',
+ 'Tipografía: [Bodoni Moda](https://github.com/google/fonts/tree/main/ofl/bodonimoda), versiones romana e itálica, bajo [SIL Open Font License 1.1](https://github.com/google/fonts/blob/main/ofl/bodonimoda/OFL.txt). Los títulos se dibujan con vectores para conservar su aspecto en todos los dispositivos.',
  '',
- 'Iconos: [Devicon](https://github.com/devicons/devicon). Calendario: [github-profile-3d-contrib](https://github.com/yoshi389111/github-profile-3d-contrib). Animaci�n de contribuciones: [snk](https://github.com/Platane/snk).',
+ 'Iconos: [Devicon](https://github.com/devicons/devicon). Calendario: [github-profile-3d-contrib](https://github.com/yoshi389111/github-profile-3d-contrib). Animación de contribuciones: [snk](https://github.com/Platane/snk).',
  '',
- '[Ver el c�digo del perfil](https://github.com/rodricrooc/rodricrooc)',
+ '[Ver el código del perfil](https://github.com/rodricrooc/rodricrooc)',
  '',
  '</details>',
  ''
 ].join('\n');
 fs.writeFileSync(path.join(out,'README.md'),md);
-console.log('Green Editorial generado: serif vectorial, Frame simplificado y variantes m�viles.');
+console.log('Green Editorial generado: serif vectorial, Frame simplificado y variantes móviles.');
 
 // Match the real contribution graphics to the profile without changing data,
 // dates, geometry, contribution levels or animation timing.
