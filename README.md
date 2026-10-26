@@ -120,7 +120,7 @@ Me gusta convertir ideas en productos con identidad. **Frame** une dos de mis in
 
 Diseño Green Editorial con portadas originales creadas para este perfil. Variantes para escritorio y móvil; la cabecera respeta la preferencia de movimiento reducido.
 
-Tipografía: [Bodoni Moda](https://github.com/google/fonts/tree/main/ofl/bodonimoda), versiones romana e itálica, bajo [SIL Open Font License 1.1](https://github.com/google/fonts/blob/main/ofl/bodonimoda/OFL.txt). Los títulos se dibujan con vectores para conservar su aspecto en todos los dispositivos.
+Nombre: [Libre Bodoni Bold](https://github.com/impallari/Libre-Bodoni), bajo SIL Open Font License 1.1. Frame: [Bodoni Moda](https://github.com/google/fonts/tree/main/ofl/bodonimoda), versiones romana e itálica, bajo [SIL Open Font License 1.1](https://github.com/google/fonts/blob/main/ofl/bodonimoda/OFL.txt). Los títulos se dibujan con vectores para conservar su aspecto en todos los dispositivos.
 
 Iconos: [Devicon](https://github.com/devicons/devicon). Calendario: [github-profile-3d-contrib](https://github.com/yoshi389111/github-profile-3d-contrib). Animación de contribuciones: [snk](https://github.com/Platane/snk).
 
